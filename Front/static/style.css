@@ -1,0 +1,156 @@
+/* CSS para a animação da imagem */
+@keyframes moveAndBack {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(100%, 100%); /* Move para a diagonal oposta (canto superior direito) */
+    }
+    100% {
+        transform: translate(0, 0); /* Volta para a posição inicial */
+    }
+}
+
+/* CSS existente */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background: white;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #FF4081;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 37px;
+    flex: 1;
+}
+
+h2 {
+    color: black;
+    text-align: center;
+    margin-bottom: 33px;
+}
+
+p {
+    color: #FF4081;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+iframe {
+    max-width: 100%;
+}
+
+.watermark {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+}
+
+.robot {
+    position: absolute;
+    right: -100px; /* Posiciona o robô fora da tela inicialmente */
+    bottom: 50px;
+    animation: waveAndExit 5s forwards;
+}
+
+@keyframes waveAndExit {
+    0% {
+        transform: translateX(0) rotate(0deg);
+    }
+    25% {
+        transform: translateX(20px) rotate(45deg);
+    }
+    50% {
+        transform: translateX(0) rotate(0deg);
+    }
+    75% {
+        transform: translateX(20px) rotate(45deg);
+    }
+    100% {
+        transform: translateX(200px) rotate(0deg); /* Move o robô para fora da tela */
+    }
+}
+
+#title {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 812px) {}
+
+:root {
+    --menu-width: 50em;
+    /* Width of menu */
+    --items: 4;
+    /* Number of items you have */
+    --item-width: calc(var(--menu-width) / var(--items));
+}
+
+nav {
+    width: var(--menu-width);
+    display: flex;
+    transform-style: preserve-3d;
+    justify-content: space-evenly;
+    position: relative;
+    z-index: 2;
+    margin: 0px auto;
+    perspective: 2000px;
+    flex-wrap: wrap;
+    top: 3em;
+}
+
+:root {
+    --link-color: black;
+    --home-link-color: #FF4081;
+}
+
+nav .menu-text,
+nav .menu-text a {
+    font-size: 1.1em;
+    color: var(--link-color); /* Use a variável de cor padrão */
+    text-decoration: none;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    transition: color 0.1s ease-out;
+    text-align: center;
+    font-weight: 500;
+    transform-style: preserve-3d;
+    flex-grow: 1;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    perspective: 200px;
+    letter-spacing: 0.5px;
+    min-height: 7.5em;
+}
+
+#menu .menu-text a[href="http://relatorios.cotrasa.local"] {
+    color: var(--home-link-color);
+}
+
+nav .menu-text a:hover {
+    color: #FF4081;
+}

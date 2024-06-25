@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Estoque</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css') }}" />
+</head>
+
+<body>
+<script src="https://kit.fontawesome.com/628c8d2499.js" crossorigin="anonymous"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<nav id="menu">
+    <div class="menu-text">
+        <a href="http://relatorios.cotrasa.local">Home</a>
+    </div>
+
+    <div class="menu-text">
+        <a href="http://relatoriosestoque.cotrasa.local">Estoque</a>
+    </div>
+
+    <div class="menu-text">
+        <a href="http://relatoriosservico.cotrasa.local">Serviços</a>
+    </div>
+
+    <div class="menu-text">
+        <a href="https://suporte.cotrasa.com.br">Suporte TI</a>
+    </div>
+
+    <br/>
+
+    <div>
+</nav>
+
+<div id="title">
+    <div class="warning">
+        <!-- HTML FOR SIDEBAR OF MESSAGES -->
+        <div id="mySidebar" class="sidebar">
+            <p>
+                {% if error_message %}
+                    {{ error_message }}
+                {% else %}
+
+                {% endif %}
+            </p>
+        </div>
+
+        <div id="main">
+            <button class="openbtn" onclick="toggleNav()">&#129170;</button>
+        </div>
+    </div>
+
+    <h1>INTERFACE PARA EXECUÇÃO DOS RELATÓRIOS</h1>
+</div>
+
+<h2>RELATÓRIOS ESTOQUE e OUTROS</h2>
+
+<div id="loader" class="custom-loader" style="display: none;"></div>
+
+<div class="container">
+
+    <form class="aligned-form" id="myForm5" action="/itensnaomov" method="post">
+        <input type="submit" value="Itens Não Movimentados" />
+        <p class="resultado"></p>
+    </form>
+
+    <form class="aligned-form" id="myForm4" action="/vendaslucrocomissoes" method="post">
+        <input type="submit" value="Vendas, Lucro e Comissões" />
+        <p class="resultado"></p>
+    </form>
+
+    <form class="aligned-form" id="myForm" action="/geralestoque" method="post">
+        <input type="submit" value="Geral Estoque" />
+        <p class="resultado"></p>
+    </form>
+
+    <form class="aligned-form" id="myForm7" action="/pedidofornecedor" method="post">
+        <input type="submit" value="Pedidos Por Fornecedor" />
+        <p class="resultado"></p>
+    </form>
+
+    <form class="aligned-form" id="myForm7" action="/osemabertosint" method="post">
+        <input type="submit" value="OS em Aberto - Sintetico" />
+        <p class="resultado"></p>
+    </form>
+
+    <form class="aligned-form" id="myForm7" action="/osabertanumperiodosint" method="post">
+        <input type="submit" value="OS Abertas Ontem - Sintetico" />
+        <p class="resultado"></p>
+    </form>
+
+    <form class="aligned-form" id="myForm7" action="/osfechadanumperiodosint" method="post">
+        <input type="submit" value="OS Fechadas Ontem - Sintetico" />
+        <p class="resultado"></p>
+    </form>
+
+
+    <form class="aligned-form" id="myFormAll" action="#" method="post">
+        <input type="submit" value="Gerar Todos" onclick="runAllTabs()" />
+        <p id="successMessage" style="display: none; color: black;">Executado com sucesso!</p>
+    </form>
+</div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>.
+
+  </body>
+</html>

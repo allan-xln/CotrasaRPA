@@ -1,0 +1,327 @@
+body {
+    font-family: Arial, sans-serif;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background: white;
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
+}
+
+h1 {
+    color: #FF4081;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 37px;
+    flex: 1;
+
+}
+
+h2 {
+    color: black;
+    text-align: center;
+    margin-bottom: 33px;
+}
+
+p {
+    color: #FF4081;
+    text-align: center;
+}
+
+form {
+    text-align: center;
+    margin-top: 50px;
+}
+
+input[type="submit"] {
+    background-color: #FF4081;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+input[type="submit"]:hover {
+    background-color: #F50057;
+}
+
+
+/*ESTILO PARA CAMPO DE PREENCHER SENHA*/
+.input-pass {
+    background-color: #FF4081;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/*ESTILO PARA BOTÃO QUE RODA TODOS OS RELATÓRIOS*/
+
+form#myFormAll input[type="submit"] {
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form#myFormAll input[type="submit"]:hover {
+    background-color: DimGrey
+}
+
+form {
+    margin: 0 10px text-align: center;
+    align-items: center;
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+    margin-bottom: 70px;
+}
+
+.response {
+    display: block;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+/* Ajuste para telas menores */
+@media only screen and (max-width: 600px) {
+.container {
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+}
+}
+
+.aligned-form {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 10px;
+}
+
+/*loader*/
+.custom-loader {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 8px solid #0000;
+    border-right-color: #FF4081;
+    position: relative;
+    animation: s4 1s infinite linear;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+
+}
+
+.custom-loader:before,
+.custom-loader:after {
+    content: "";
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: inherit;
+    animation: inherit;
+    animation-duration: 2s;
+}
+
+.custom-loader:after {
+    animation-duration: 4s;
+}
+
+@keyframes s4 {
+    100% {
+        transform: rotate(1turn)
+    }
+}
+
+.popup {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    /* Inicialmente fora da tela */
+    width: 300px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: right 0.3s ease-in-out;
+}
+
+.popup-content {
+    background-color: #fff;
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.close-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+/*CSS PARA SIDEBAR DE COMUNICADOS*/
+/* The sidebar menu */
+.sidebar {
+    height: 52px;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    background-color: #111;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the sidebar */
+}
+
+/* The sidebar links */
+.sidebar p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 2px 20px 6px 20px;
+    text-decoration: none;
+    font-size: 13px;
+    color: #FF4081;
+    display: block;
+    transition: 0.3s;
+}
+
+
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+    color: #444;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+
+#title {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+
+#mySidebar {
+    flex: 1;
+    /* Para ocupar o espaço restante */
+}
+
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: #FF4081;
+    padding: 5px 10px 10PX 15px;
+    border: none;
+    font-size: 40px;
+    /* Adjust this value to increase the size */
+}
+
+.openbtn:hover {
+    background-color: #444;
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+    transition: margin-left .5s;
+    /* If you want a transition effect */
+    padding: 2px 20px 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 812px) {}
+
+:root {
+    --menu-width: 50em;
+    /* Width of menu */
+    --items: 4;
+    /* Number of items you have */
+    --item-width: calc(var(--menu-width) / var(--items));
+}
+
+nav {
+    width: var(--menu-width);
+    display: flex;
+    transform-style: preserve-3d;
+    justify-content: space-evenly;
+    position: relative;
+    z-index: 2;
+    margin: 0px auto;
+    perspective: 2000px;
+    flex-wrap: wrap;
+    top: 3em;
+}
+
+:root {
+    --link-color: black;
+    --home-link-color: #FF4081;
+
+
+nav .menu-text,
+nav .menu-text a {
+    font-size: 1.1em;
+    color: var(--link-color); /* Use a variável de cor padrão */
+    text-decoration: none;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    transition: color 0.1s ease-out;
+    text-align: center;
+    font-weight: 500;
+    transform-style: preserve-3d;
+    flex-grow: 1;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    perspective: 200px;
+    letter-spacing: 0.5px;
+    min-height: 7.5em;
+}
+
+#menu .menu-text a[href="http://relatoriosestoque.cotrasa.local"] {
+    color: var(--home-link-color);
+}
+
+nav .menu-text a:hover {
+    color: #FF4081;
+}
